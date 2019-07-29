@@ -7,6 +7,7 @@ const PassThrough = require('stream').PassThrough;
 const nodemailer = require('nodemailer');
 const stripe = require('stripe')('sk_test_g76mGngIIv5jplpcHpDog4Mv00LSXW1A92');
 const AWS = require('aws-sdk');
+const path = require('path');
 const app = express();
 
 AWS.config.update({region: 'eu-west-1'});
@@ -14,9 +15,10 @@ AWS.config.update({region: 'eu-west-1'});
 app.use(cors());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
+app.use(express.static(path.join(__dirname, 'client/build')));
 
 app.get('/*', (req, res) => {
-  res.sendFile(path.join(__dirname, 'build', 'index.html'))
+  res.sendFile(path.join(__dirname, 'client/build/index.html'))
 })
 
 app.post('/payment', async (req, res) => {
