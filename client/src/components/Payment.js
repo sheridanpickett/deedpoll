@@ -8,7 +8,7 @@ const Payment = ({stripe}) => {
   const submit = async () => {
     try {
       const token = await stripe.createToken({name: "Name"});
-      let res = await axios.post('http://localhost:5000/payment', { id: token.token.id });
+      let res = await axios.post('http://ec2-3-8-122-36.eu-west-2.compute.amazonaws.com:5000', { id: token.token.id });
       console.log(res);
     } catch(err) {
       console.log(err);
