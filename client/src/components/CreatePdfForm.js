@@ -15,7 +15,7 @@ class CreatePdfForm extends Component {
   }
 
   createAndDownloadPdf = () => {
-    axios.post('http://ec2-3-8-122-36.eu-west-2.compute.amazonaws.com:5000', this.state, { responseType: 'blob' })
+    axios.post('http://ec2-3-8-122-36.eu-west-2.compute.amazonaws.com:5000/create-pdf', this.state, { responseType: 'blob' })
     .then(res => {
       const pdfBlob = new Blob([res.data], { type: 'application/pdf' });
       saveAs(pdfBlob, 'generatedDocument.pdf');
