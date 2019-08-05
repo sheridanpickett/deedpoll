@@ -8,7 +8,7 @@ class App extends Component {
     return (
       <StripeProvider apiKey="pk_test_1IZFtE9GvSsI3DEfJdeBwTuZ00wr7w70ox">
         <Router>
-          <div className="App">
+          <div className="app">
             <AppRouter />
           </div>
         </Router>

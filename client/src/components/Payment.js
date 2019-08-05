@@ -1,9 +1,8 @@
-import React, { useState } from 'react';
+import React from 'react';
 import axios from 'axios';
 import {CardNumberElement, CardExpiryElement, CardCvcElement, injectStripe} from 'react-stripe-elements';
 
 const Payment = ({stripe}) => {
-  const [amount, setAmount] = useState(null)
 
   const submit = async () => {
     try {
@@ -36,8 +35,6 @@ const Payment = ({stripe}) => {
       <CardExpiryElement style={{base}} />
       <label>CVC</label>
       <CardCvcElement style={{base}} />
-      <label>Amount: </label>
-      <input type="number" onChange={e => setAmount(e.target.value)} />
       <button onClick={submit}>Submit</button>
     </>
   )

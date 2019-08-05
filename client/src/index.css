@@ -1,21 +1,136 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
+  box-sizing: border-box;
   margin: 0;
+  background-color: #efefef;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #f6f6f6;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
 }
 
-h1 {
-  color: #008670;
-}
-
 .StripeElement {
   background-color: white;
+}
+
+@keyframes dropfade {
+  from {
+    transform: translateY(-10%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes bounce {
+  0% {
+    transform: translateY(0);
+  }
+  10% {
+    transform: translateY(-7px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+.link-container {
+  margin: 50px 1rem;
+  flex-basis: 10%;
+  text-align: center;
+}
+
+.bounce span {
+  animation: bounce 0.3s ease 0s 1;
+}
+
+.link span {
+  display: inline-block;
+}
+
+.link {
+  position: relative;
+  display: inline-block;
+  font-weight: bold;
+  color: black;
+  text-decoration: none;
+}
+
+.one {
+  animation: dropfade 0.4s ease 0.1s 1;
+  animation-fill-mode: backwards;
+}
+
+.two {
+  animation: dropfade 0.4s ease 0.2s 1;
+  animation-fill-mode: backwards;
+}
+
+.three {
+  animation: dropfade 0.4s ease 0.3s 1;
+  animation-fill-mode: backwards;
+}
+
+header {
+  padding: 10px;
+  height: 100vh;
+}
+
+.not-sticky {
+  position: sticky;
+  top: 10px;
+  display: flex;
+  transition: all 0.3s;
+}
+.not-sticky .link-container {
+  flex-grow: 0;
+  transition: all 0.2s;
+}
+
+.sticky {
+  position: sticky;
+  top: 0px;
+  display: flex;
+  background-color: #fff;
+  transition: all 0.3s;
+}
+.sticky .link-container {
+  flex-grow: 1;
+  transition: all 0.5s;
+}
+
+.heading-h1 {
+  margin: 10%;
+}
+
+.header-h1 {
+  margin: 0;
+  font-size: 5rem;
+}
+.header-h1 .header-span {
+  display: inline-block;
+  animation: dropfade 0.5s ease 0s 1;
+}
+.header-h1 .underlined {
+  display: inline-block;
+  animation: dropfade 0.4s ease 0s 1;
+  border-bottom: 0.4rem solid black;
+}
+
+.section-one {
+  height: 2000px;
+  background-color: #fff;
+}
+
+.sentinal {
+  height: 0.01px;
+  visibility: hidden;
 }
 
 /*# sourceMappingURL=index.css.map */
