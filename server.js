@@ -41,16 +41,13 @@ app.post('/create-pdf', (req, res) => {
 	  if (err) {
       console.log(err);
     }
-
     const pdfStream = new PassThrough();
     stream.pipe(pdfStream).pipe(res);
-
     const transporter = nodemailer.createTransport({
 	    SES: new AWS.SES({
 	        apiVersion: '2010-12-01'
 	    })
 		});
-
 		transporter.sendMail({
 		    from: 'sheridanpickett@gmail.com',
 		    to: 'sheridan.pickett@hotmail.co.uk',
