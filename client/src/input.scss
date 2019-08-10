@@ -2,11 +2,13 @@
 $primary-color: #008670;
 
 //imports
+@import './partials/misc/global';
 @import './partials/misc/media-queries';
 @import './partials/misc/keyframes';
 @import './partials/components/MainNav';
 @import './partials/components/Logo';
 @import './partials/pages/Home';
+@import './partials/pages/Apply';
 
 
 //css
@@ -27,7 +29,9 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
-
+html {
+  scroll-behavior: smooth;
+}
 
 .StripeElement {
   background-color: white;

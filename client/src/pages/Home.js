@@ -51,17 +51,20 @@ export default () => {
           </p>
         </div>
         <div className="container-two">
-          <Link>Adult Application Form</Link>
-          <Link>Child Application Form</Link>
-          <Link>Learn More</Link>
+          <Link className="g_link" to={{pathname: "apply", search: "?form=adult"}}>Adult Application Form</Link>
+          <Link className="g_link" to={{pathname: "apply", search: "?form=child"}}>Child Application Form</Link>
+          <a className="g_link" href="#learn-more">Learn More</a>
         </div>
       </div>
+
+
       <div className="section-two">
         <h2 className="heading">Why Deed Poll Online?</h2>
         <div>
           <div className={`img-container one ${notVisible ? 'not-visible' : 'visible'}`}>
             <img className="svg" alt="padlock image" src={padlockSVG} />
           </div>
+          <div className="sentinal-two" ref={sentinalTwo}></div>
           <h3>Secure.</h3>
         </div>
         <div>
@@ -81,8 +84,27 @@ export default () => {
           We'll send you your Deed Poll via our secure mail server, all you have to do is sign and date it.
         </p>
       </div>
-      <div className="sentinal-two" ref={sentinalTwo}></div>
-      <div className="section-three">
+      <hr className="divider" />
+
+
+      <div className="section-three" id="learn-more">
+        <h2 className="heading">How does it work?</h2>
+        <div className="container">
+          <h3>1</h3>
+          <p>Fill in the form and wait for confirmation email</p>
+        </div>
+        <div className="container">
+          <h3>2</h3>
+          <p>Print off the pdf form you receive via email</p>
+        </div>
+        <div className="container">
+          <h3>3</h3>
+          <p>Sign and date the form. Get a witness the sign the form</p>
+        </div>
+        <div className="container">
+          <h3>4</h3>
+          <p>Send the form to HMRC</p>
+        </div>
       </div>
     </div>
   )

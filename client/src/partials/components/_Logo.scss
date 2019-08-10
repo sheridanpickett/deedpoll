@@ -4,5 +4,6 @@
     color: #008670;
     font-size: 1.2rem;
     border-bottom: .4rem solid black;
-    animation: dropfade .5s ease 0s 1;
+    animation: dropfade .5s ease .1s 1;
+    animation-fill-mode: backwards;
 }

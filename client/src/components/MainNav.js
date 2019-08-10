@@ -29,7 +29,7 @@ export default ({className}) => {
       </Link>
       <Link className={`link four ${active.four ? 'bounce':''}`}
         onMouseEnter={()=>setActive({...active, four: true})}
-        onAnimationEnd={()=>setActive({...active, four: false})} to="/payment">
+        onAnimationEnd={()=>setActive({...active, four: false})} to="/apply">
         <span>Apply Now</span>
       </Link>
     </nav>

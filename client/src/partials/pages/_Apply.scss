@@ -1,0 +1,16 @@
+.Apply {
+  .section-one {
+    min-height: 100vh;
+    padding: 100px 5%;
+    display: grid;
+    justify-content: center;
+    align-content: center;
+  }
+  h2 {
+    font-size: 2rem;
+    font-weight: 200;
+  }
+  span {
+    color: #008670;
+  }
+}
