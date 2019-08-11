@@ -23,6 +23,7 @@ app.get('/*', (req, res) => {
 
 app.post('/payment', async (req, res) => {
   try {
+    console.log(req.body.form);
     let {status} = await stripe.charges.create({
       amount: 40,
       currency: "gbp",
