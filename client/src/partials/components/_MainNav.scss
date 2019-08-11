@@ -11,51 +11,55 @@
     margin-right: auto;
   }
 
-  .link {
+  .MainNav-link {
     margin: 0 1%;
     text-align: center;
     font-weight: bold;
     color: black;
     text-decoration: none;
-    span {
+    .MainNav-link-inner {
       display: inline-block;
     }
   }
-  .bounce span {
+  .MainNav-bounce .MainNav-link-inner {
     animation: bounce .3s ease 0s 1;
   }
-  .one {
+  .MainNav-dropfade {
     animation: dropfade .4s ease .1s 1;
     animation-fill-mode: backwards;
   }
-  .two {
+  .MainNav-dropfade-delayed {
     animation: dropfade .4s ease .2s 1;
     animation-fill-mode: backwards;
   }
-  .three {
+  .MainNav-dropfade-delayed-two {
     animation: dropfade .4s ease .3s 1;
     animation-fill-mode: backwards;
   }
-  .four {
+  .MainNav-dropfade-delayed-three {
+    animation: dropfade .4s ease .4s 1;
+    animation-fill-mode: backwards;
+  }
+  .MainNav-link-light {
     font-weight: normal;
   }
 }
 
-.not-sticky {
+.MainNav-not-sticky {
   justify-content: flex-end;
   background-color: rgba(255, 255, 255, 1);
   transition: all .8s;
-  .link{
+  .MainNav-link{
     transition: all .2s;
     flex-grow: 0;
   }
 }
 
-.sticky {
+.MainNav-sticky {
   justify-content: flex-end;
   background-color: rgba(255, 255, 255, .7);
   transition: all .5s;
-  .link {
+  .MainNav-link {
     transition: all .8s;
     flex-grow: 1;
   }

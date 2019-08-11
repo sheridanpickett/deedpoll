@@ -4,15 +4,16 @@
 }
 
 .g_link {
-  display: block;
+  display: inline-block;
   font-size: 1rem;
   font-weight: 600;
   text-decoration: none;
   color: #e87572;
   border: 1px solid #e87572;
   border-radius: 36px;
-  margin: 10px;
-  padding: 18px 50px;
+  margin: 2%;
+  padding: 18px;
+  width: 90%;
   text-align: center;
   box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
   transition: all 0.5s;
@@ -47,80 +48,6 @@
     transform: translateY(0);
   }
 }
-.MainNav {
-  padding: 1% 1.5% 1% 1%;
-  display: flex;
-  align-items: flex-end;
-  position: fixed;
-  top: 0;
-  right: 0;
-  left: 0;
-}
-.MainNav .Logo {
-  margin-right: auto;
-}
-.MainNav .link {
-  margin: 0 1%;
-  text-align: center;
-  font-weight: bold;
-  color: black;
-  text-decoration: none;
-}
-.MainNav .link span {
-  display: inline-block;
-}
-.MainNav .bounce span {
-  animation: bounce 0.3s ease 0s 1;
-}
-.MainNav .one {
-  animation: dropfade 0.4s ease 0.1s 1;
-  animation-fill-mode: backwards;
-}
-.MainNav .two {
-  animation: dropfade 0.4s ease 0.2s 1;
-  animation-fill-mode: backwards;
-}
-.MainNav .three {
-  animation: dropfade 0.4s ease 0.3s 1;
-  animation-fill-mode: backwards;
-}
-.MainNav .four {
-  font-weight: normal;
-}
-
-.not-sticky {
-  justify-content: flex-end;
-  background-color: white;
-  transition: all 0.8s;
-}
-.not-sticky .link {
-  transition: all 0.2s;
-  flex-grow: 0;
-}
-
-.sticky {
-  justify-content: flex-end;
-  background-color: rgba(255, 255, 255, 0.7);
-  transition: all 0.5s;
-}
-.sticky .link {
-  transition: all 0.8s;
-  flex-grow: 1;
-}
-.sticky .Logo {
-  display: none;
-}
-
-.Logo {
-  margin: 0;
-  padding: 0;
-  color: #008670;
-  font-size: 1.2rem;
-  border-bottom: 0.4rem solid black;
-  animation: dropfade 0.5s ease 0.1s 1;
-  animation-fill-mode: backwards;
-}
-
 .Home .sentinal {
   height: 1px;
   visibility: hidden;
@@ -141,7 +68,6 @@
 .Home .heading {
   font-size: 3.5rem;
   font-weight: 200;
-  text-align: center;
   margin: 0;
   padding: 3% 0;
 }
@@ -151,7 +77,7 @@
 .Home .section-one {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   flex-wrap: wrap;
   padding: 0 7%;
   padding-top: 100px;
@@ -159,17 +85,20 @@
   background-image: linear-gradient(#ddd 0%, #fafafa 21%, #fafafa 100%);
 }
 .Home .section-one .container-one {
+  flex-grow: 1;
   animation: fadein 0.5s 0.1s 1;
   animation-fill-mode: backwards;
 }
 .Home .section-one .container-two {
+  text-align: center;
+  flex-grow: 1;
   animation: fadein 0.5s 0.1s 1;
   animation-fill-mode: backwards;
-  margin: 0 auto;
 }
 .Home .section-one .heading {
   font-size: 4rem;
   margin-top: 0;
+  text-align: left;
 }
 .Home .section-one .text {
   font-size: 1.2rem;
@@ -210,7 +139,7 @@
   width: 40%;
   box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
 }
-.Home .section-two h3 {
+.Home .section-two .subheading {
   font-weight: bold;
   font-size: 2rem;
 }
@@ -222,8 +151,9 @@
 .section-three .heading {
   color: #e87572;
   padding: 3%;
+  text-align: center;
 }
-.section-three h3 {
+.section-three .subheading {
   width: 30%;
   text-align: center;
   margin: 0;
@@ -231,7 +161,7 @@
   font-size: 1.5rem;
   font-weight: 200;
 }
-.section-three p {
+.section-three .text {
   width: 70%;
   margin: 0;
   padding: 3%;
@@ -244,19 +174,98 @@
   align-content: center;
 }
 
-.Apply .section-one {
-  min-height: 100vh;
-  padding: 100px 5%;
-  display: grid;
-  justify-content: center;
-  align-content: center;
+.Apply {
+  margin-top: 100px;
 }
-.Apply h2 {
-  font-size: 2rem;
-  font-weight: 200;
+
+.Contact {
+  margin-top: 100px;
 }
-.Apply span {
+
+.Privacy {
+  margin-top: 100px;
+}
+
+.Info {
+  margin-top: 100px;
+}
+
+.MainNav {
+  padding: 1% 1.5% 1% 1%;
+  display: flex;
+  align-items: flex-end;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+}
+.MainNav .Logo {
+  margin-right: auto;
+}
+.MainNav .MainNav-link {
+  margin: 0 1%;
+  text-align: center;
+  font-weight: bold;
+  color: black;
+  text-decoration: none;
+}
+.MainNav .MainNav-link .MainNav-link-inner {
+  display: inline-block;
+}
+.MainNav .MainNav-bounce .MainNav-link-inner {
+  animation: bounce 0.3s ease 0s 1;
+}
+.MainNav .MainNav-dropfade {
+  animation: dropfade 0.4s ease 0.1s 1;
+  animation-fill-mode: backwards;
+}
+.MainNav .MainNav-dropfade-delayed {
+  animation: dropfade 0.4s ease 0.2s 1;
+  animation-fill-mode: backwards;
+}
+.MainNav .MainNav-dropfade-delayed-two {
+  animation: dropfade 0.4s ease 0.3s 1;
+  animation-fill-mode: backwards;
+}
+.MainNav .MainNav-dropfade-delayed-three {
+  animation: dropfade 0.4s ease 0.4s 1;
+  animation-fill-mode: backwards;
+}
+.MainNav .MainNav-link-light {
+  font-weight: normal;
+}
+
+.MainNav-not-sticky {
+  justify-content: flex-end;
+  background-color: white;
+  transition: all 0.8s;
+}
+.MainNav-not-sticky .MainNav-link {
+  transition: all 0.2s;
+  flex-grow: 0;
+}
+
+.MainNav-sticky {
+  justify-content: flex-end;
+  background-color: rgba(255, 255, 255, 0.7);
+  transition: all 0.5s;
+}
+.MainNav-sticky .MainNav-link {
+  transition: all 0.8s;
+  flex-grow: 1;
+}
+.MainNav-sticky .Logo {
+  display: none;
+}
+
+.Logo-h1 {
+  margin: 0;
+  padding: 0;
   color: #008670;
+  font-size: 1.2rem;
+  border-bottom: 0.4rem solid black;
+  animation: dropfade 0.5s ease 0.1s 1;
+  animation-fill-mode: backwards;
 }
 
 * {

@@ -1,15 +1,19 @@
 //variables
 $primary-color: #008670;
 
-//imports
+//import pages and utils
 @import './partials/misc/global';
 @import './partials/misc/media-queries';
 @import './partials/misc/keyframes';
-@import './partials/components/MainNav';
-@import './partials/components/Logo';
 @import './partials/pages/Home';
 @import './partials/pages/Apply';
+@import './partials/pages/Contact';
+@import './partials/pages/Privacy';
+@import './partials/pages/Info';
 
+//import components
+@import './partials/components/MainNav';
+@import './partials/components/Logo';
 
 //css
 * {

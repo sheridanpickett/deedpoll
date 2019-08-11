@@ -3,9 +3,9 @@ import MainNav from '../components/MainNav';
 
 export default () => {
   return (
-    <div className="Contact">
+    <div className="Privacy">
       <MainNav />
-      <h1>Contact</h1>
+      <h1>Privacy</h1>
     </div>
   )
 }

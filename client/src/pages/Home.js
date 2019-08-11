@@ -41,9 +41,9 @@ export default () => {
 
   return (
     <div className="Home">
-      <MainNav className={sticky ? 'sticky' : 'not-sticky'}/>
+      <MainNav className={sticky ? 'MainNav-sticky' : 'MainNav-not-sticky'}/>
+      <div className="sentinal" ref={sentinalOne}></div>
       <div className="section-one">
-        <div className="sentinal" ref={sentinalOne}></div>
         <div className="container-one">
           <h1 className="heading">UK Deed Poll Online</h1>
           <p className="text">
@@ -51,8 +51,7 @@ export default () => {
           </p>
         </div>
         <div className="container-two">
-          <Link className="g_link" to={{pathname: "apply", search: "?form=adult"}}>Adult Application Form</Link>
-          <Link className="g_link" to={{pathname: "apply", search: "?form=child"}}>Child Application Form</Link>
+          <Link className="g_link" to="/apply">Apply Now</Link>
           <a className="g_link" href="#learn-more">Learn More</a>
         </div>
       </div>
@@ -65,19 +64,19 @@ export default () => {
             <img className="svg" alt="padlock image" src={padlockSVG} />
           </div>
           <div className="sentinal-two" ref={sentinalTwo}></div>
-          <h3>Secure.</h3>
+          <h3 className="subheading">Secure.</h3>
         </div>
         <div>
           <div className={`img-container two ${notVisible ? 'not-visible' : 'visible'}`}>
             <img className="svg" alt="clock image" src={clockSVG} />
           </div>
-          <h3>Fast.</h3>
+          <h3 className="subheading">Fast.</h3>
         </div>
         <div>
           <div className={`img-container three ${notVisible ? 'not-visible' : 'visible'}`}>
             <img className="svg" alt="thumbs up image" src={thumbSVG} />
           </div>
-          <h3>Simple.</h3>
+          <h3 className="subheading">Simple.</h3>
         </div>
         <p className="text">
           Deed Poll Online is the quickest, easiest and safest way to change your name online.
@@ -90,20 +89,20 @@ export default () => {
       <div className="section-three" id="learn-more">
         <h2 className="heading">How does it work?</h2>
         <div className="container">
-          <h3>1</h3>
-          <p>Fill in the form and wait for confirmation email</p>
+          <h3 className="subheading">1</h3>
+          <p className="text">Fill in the form and wait for confirmation email</p>
         </div>
         <div className="container">
-          <h3>2</h3>
-          <p>Print off the pdf form you receive via email</p>
+          <h3 className="subheading">2</h3>
+          <p className="text">Print off the pdf form you receive via email</p>
         </div>
         <div className="container">
-          <h3>3</h3>
-          <p>Sign and date the form. Get a witness the sign the form</p>
+          <h3 className="subheading">3</h3>
+          <p className="text">Sign and date the form. Get a witness the sign the form</p>
         </div>
         <div className="container">
-          <h3>4</h3>
-          <p>Send the form to HMRC</p>
+          <h3 className="subheading">4</h3>
+          <p className="text">Send the form to HMRC</p>
         </div>
       </div>
     </div>

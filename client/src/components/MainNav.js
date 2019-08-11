@@ -7,30 +7,36 @@ export default ({className}) => {
     one: false,
     two: false,
     three: false,
-    four: false});
+    four: false,
+    five: false});
 
   return (
     <nav className={`MainNav ${className}`}>
       <Logo />
-      <Link className={`link one ${active.one ? 'bounce':''}`}
+      <Link className={`MainNav-link MainNav-dropfade ${active.one ? 'MainNav-bounce':''}`}
         onMouseEnter={()=>setActive({...active, one: true})}
         onAnimationEnd={()=>setActive({...active, one: false})} to="/">
-        <span>Home</span>
+        <span className="MainNav-link-inner">Home</span>
       </Link>
-      <Link className={`link two ${active.two ? 'bounce':''}`}
+      <Link className={`MainNav-link MainNav-dropfade-delayed ${active.two ? 'MainNav-bounce':''}`}
         onMouseEnter={()=>setActive({...active, two: true})}
         onAnimationEnd={()=>setActive({...active, two: false})} to="/contact">
-        <span>Contact</span>
+        <span className="MainNav-link-inner">Contact</span>
       </Link>
-      <Link className={`link three ${active.three ? 'bounce':''}`}
+      <Link className={`MainNav-link MainNav-dropfade-delayed-two ${active.three ? 'MainNav-bounce':''}`}
         onMouseEnter={()=>setActive({...active, three: true})}
-        onAnimationEnd={()=>setActive({...active, three: false})} to="/payment">
-        <span>Payment</span>
+        onAnimationEnd={()=>setActive({...active, three: false})} to="/privacy">
+        <span className="MainNav-link-inner">Privacy</span>
       </Link>
-      <Link className={`link four ${active.four ? 'bounce':''}`}
+      <Link className={`MainNav-link MainNav-dropfade-delayed-three ${active.four ? 'MainNav-bounce':''}`}
         onMouseEnter={()=>setActive({...active, four: true})}
-        onAnimationEnd={()=>setActive({...active, four: false})} to="/apply">
-        <span>Apply Now</span>
+        onAnimationEnd={()=>setActive({...active, four: false})} to="/info">
+        <span className="MainNav-link-inner">Info</span>
+      </Link>
+      <Link className={`MainNav-link MainNav-link-light ${active.five ? 'MainNav-bounce':''}`}
+        onMouseEnter={()=>setActive({...active, five: true})}
+        onAnimationEnd={()=>setActive({...active, five: false})} to="/apply">
+        <span className="MainNav-link-inner">Apply Now</span>
       </Link>
     </nav>
   )
