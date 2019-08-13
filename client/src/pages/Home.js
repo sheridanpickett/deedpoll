@@ -13,8 +13,6 @@ export default () => {
   const [notVisible, setNotVisible] = useState(true);
 
   useEffect(() => {
-    const sentinalOneCurrent = sentinalOne.current;
-    const sentinalTwoCurrent = sentinalTwo.current;
     const options = {
       threshold: 0.0
     }
@@ -34,9 +32,9 @@ export default () => {
         }
       }))
     }, options);
-    observer.observe(sentinalOneCurrent);
-    observer.observe(sentinalTwoCurrent);
-    return () => observer.unobserve(sentinalOneCurrent, sentinalTwoCurrent);
+    observer.observe(sentinalOne.current);
+    observer.observe(sentinalTwo.current);
+    return () => observer.unobserve(sentinalOne.current, sentinalTwo.current);
   }, [])
 
   return (
@@ -55,7 +53,6 @@ export default () => {
           <a className="g_link" href="#learn-more">Learn More</a>
         </div>
       </div>
-
 
       <div className="section-two">
         <h2 className="heading">Why Deed Poll Online?</h2>
@@ -85,12 +82,11 @@ export default () => {
       </div>
       <hr className="divider" />
 
-
       <div className="section-three" id="learn-more">
         <h2 className="heading">How does it work?</h2>
         <div className="container">
           <h3 className="subheading">1</h3>
-          <p className="text">Fill in the form and wait for confirmation email</p>
+          <p className="text">Fill in an application form and wait for a confirmation email</p>
         </div>
         <div className="container">
           <h3 className="subheading">2</h3>
@@ -98,11 +94,16 @@ export default () => {
         </div>
         <div className="container">
           <h3 className="subheading">3</h3>
-          <p className="text">Sign and date the form. Get a witness the sign the form</p>
+          <p className="text">Sign and date the form. Get two witnesses to sign the form</p>
         </div>
         <div className="container">
           <h3 className="subheading">4</h3>
-          <p className="text">Send the form to HMRC</p>
+          <p className="text">Send the form to all relevant record-holders</p>
+        </div>
+        <div className="container">
+          <div className="subheading">
+            <Link className="g_link" to="/info">More Info</Link>
+          </div>
         </div>
       </div>
     </div>

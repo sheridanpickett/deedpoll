@@ -24,7 +24,7 @@ export default class extends React.Component {
  render () {
    return (
       <div className="Apply">
-        <MainNav />
+        <MainNav className={'absolute'} />
         <h1>Apply</h1>
         <ApplicationForm formState={this.state} setFormState={this.setFormState} />
         <Payment formState={this.state} />

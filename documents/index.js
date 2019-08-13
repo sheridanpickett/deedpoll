@@ -1,5 +1,4 @@
-module.exports = ({ name, price1, price2, receiptId }) => {
-    const today = new Date();
+module.exports = ({ address, currentName, newName, witness1Name, witness1Address, witness2Name, witness2Address }) => {
 return `
     <!doctype html>
     <html>
@@ -7,14 +6,16 @@ return `
           <meta charset="utf-8">
           <title>Deed Poll</title>
           <style>
-
+            p {
+              color: blue;
+            }
           </style>
        </head>
        <body>
           <p>
-            “I [old name] of [your address] have given up my name [old name] and have adopted for all purposes the name [new name].
+            “I ${currentName} of ${address} have given up my name ${currentName} and have adopted for all purposes the name ${newName}.
 
-            “Signed as a deed on [date] as [old name] and [new name] in the presence of [witness 1 name] of [witness 1 address], and [witness 2 name] of [witness 2 address].
+            “Signed as a deed on [date] as ${currentName} and ${newName} in the presence of ${witness1Name} of ${witness1Address}, and ${witness2Name} of ${witness2Address}.
 
             “[your new signature], [your old signature]
 

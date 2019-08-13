@@ -23,13 +23,15 @@ app.get('/*', (req, res) => {
 
 app.post('/payment', async (req, res) => {
   try {
-    console.log(req.body.form);
     let {status} = await stripe.charges.create({
-      amount: 40,
+      amount: 399,
       currency: "gbp",
       description: "An example charge",
       source: req.body.id
     });
+    if(status==='succeeded') {
+
+    }
     res.json({status});
   } catch (err) {
     console.log(err);
@@ -37,23 +39,30 @@ app.post('/payment', async (req, res) => {
   }
 })
 
+// const createPdf = () => {
+//
+// }
+
 app.post('/create-pdf', (req, res) => {
-  pdf.create(pdfTemplate(req.body), {}).toStream((err, stream) => {
+  pdf.create(pdfTemplate(req.body.formState), {}).toStream((err, stream) => {
 	  if (err) {
       console.log(err);
     }
     const pdfStream = new PassThrough();
-    stream.pipe(pdfStream).pipe(res);
+    stream.pipe(pdfStream);
     const transporter = nodemailer.createTransport({
 	    SES: new AWS.SES({
 	        apiVersion: '2010-12-01'
 	    })
 		});
 		transporter.sendMail({
-		    from: 'sheridanpickett@gmail.com',
+		    from: 'deedpollonline@gmail.com',
 		    to: 'sheridan.pickett@hotmail.co.uk',
-		    subject: 'Message',
-		    text: 'pdf gen test',
+		    subject: 'Deed Poll UK Confirmation',
+		    text: `
+        Hello ${req.body.formState.currentName},
+        This is to confirm payment had been accepted.
+        Please find your custom Deed Poll attached.`,
 		    attachments: [
 		    	{
 		    		filename: 'deedpoll.pdf',
@@ -68,4 +77,4 @@ app.post('/create-pdf', (req, res) => {
   });
 })
 
-app.listen(5000)
+app.listen(8000)

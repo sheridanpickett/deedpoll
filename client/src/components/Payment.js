@@ -5,9 +5,12 @@ import {CardNumberElement, CardExpiryElement, CardCvcElement, injectStripe} from
 const Payment = ({stripe, formState}) => {
 
   const submit = async () => {
+    const host = 'http://ec2-3-8-122-36.eu-west-2.compute.amazonaws.com:5000/payment';
+    const localhost = 'http://localhost:8000/';
     try {
       const token = await stripe.createToken({name: "Name"});
-      let res = await axios.post('http://ec2-3-8-122-36.eu-west-2.compute.amazonaws.com:5000/payment', { id: token.token.id, form: formState });
+      let res = await axios.post(localhost+'payment', { id: token.token.id, form: formState });
+      axios.post(localhost+'create-pdf', {formState});
       console.log(res);
     } catch(err) {
       console.log(err);
@@ -28,9 +31,7 @@ const Payment = ({stripe, formState}) => {
     <div className="Payment">
       <h1>Payment</h1>
       <label>Credit Card Number</label>
-      <div>
-        <CardNumberElement placeholder="Card Number" style={{base}} />
-      </div>
+      <CardNumberElement placeholder="Card Number" style={{base}} />
       <label>Expiry Date</label>
       <CardExpiryElement style={{base}} />
       <label>CVC</label>

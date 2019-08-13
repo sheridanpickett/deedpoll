@@ -175,26 +175,33 @@
 }
 
 .Apply {
-  margin-top: 100px;
+  position: relative;
 }
 
 .Contact {
-  margin-top: 100px;
-}
-
-.Privacy {
-  margin-top: 100px;
+  position: relative;
 }
 
 .Info {
-  margin-top: 100px;
+  position: relative;
+}
+.Info .heading {
+  padding: 3% 7%;
+  font-size: 3rem;
+  font-weight: 200;
+  border-bottom: 1px solid black;
+}
+.Info .section-one {
+  margin: 0 7%;
+  font-size: 1.5rem;
+  font-weight: 200;
+  line-height: 150%;
 }
 
 .MainNav {
   padding: 1% 1.5% 1% 1%;
   display: flex;
   align-items: flex-end;
-  position: fixed;
   top: 0;
   right: 0;
   left: 0;
@@ -227,15 +234,12 @@
   animation: dropfade 0.4s ease 0.3s 1;
   animation-fill-mode: backwards;
 }
-.MainNav .MainNav-dropfade-delayed-three {
-  animation: dropfade 0.4s ease 0.4s 1;
-  animation-fill-mode: backwards;
-}
 .MainNav .MainNav-link-light {
   font-weight: normal;
 }
 
 .MainNav-not-sticky {
+  position: fixed;
   justify-content: flex-end;
   background-color: white;
   transition: all 0.8s;
@@ -246,6 +250,7 @@
 }
 
 .MainNav-sticky {
+  position: fixed;
   justify-content: flex-end;
   background-color: rgba(255, 255, 255, 0.7);
   transition: all 0.5s;
@@ -256,6 +261,15 @@
 }
 .MainNav-sticky .Logo {
   display: none;
+}
+.MainNav-sticky .MainNav-absolute {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  justify-content: flex-end;
+  background-color: white;
+  transition: all 0.8s;
 }
 
 .Logo-h1 {

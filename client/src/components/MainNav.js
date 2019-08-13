@@ -25,19 +25,15 @@ export default ({className}) => {
       </Link>
       <Link className={`MainNav-link MainNav-dropfade-delayed-two ${active.three ? 'MainNav-bounce':''}`}
         onMouseEnter={()=>setActive({...active, three: true})}
-        onAnimationEnd={()=>setActive({...active, three: false})} to="/privacy">
-        <span className="MainNav-link-inner">Privacy</span>
-      </Link>
-      <Link className={`MainNav-link MainNav-dropfade-delayed-three ${active.four ? 'MainNav-bounce':''}`}
-        onMouseEnter={()=>setActive({...active, four: true})}
-        onAnimationEnd={()=>setActive({...active, four: false})} to="/info">
+        onAnimationEnd={()=>setActive({...active, three: false})} to="/info">
         <span className="MainNav-link-inner">Info</span>
       </Link>
-      <Link className={`MainNav-link MainNav-link-light ${active.five ? 'MainNav-bounce':''}`}
-        onMouseEnter={()=>setActive({...active, five: true})}
-        onAnimationEnd={()=>setActive({...active, five: false})} to="/apply">
+      <Link className={`MainNav-link MainNav-link-light ${active.four ? 'MainNav-bounce':''}`}
+        onMouseEnter={()=>setActive({...active, four: true})}
+        onAnimationEnd={()=>setActive({...active, four: false})} to="/apply">
         <span className="MainNav-link-inner">Apply Now</span>
       </Link>
+      
     </nav>
   )
 }
