@@ -5,8 +5,8 @@ import MainNav from '../components/MainNav';
 export default () => {
   return (
     <div className="Info">
-      <MainNav className={'absolute'} />
-      <h1 className="heading">Info</h1>
+      <MainNav />
+      <h1 className="global-heading">Info</h1>
       <div className="section-one">
         You do not have to follow a legal process to start using a new name.
         But you might need a ‘deed poll’ to apply for or to change official documents

@@ -1,45 +1,18 @@
-import React, { useRef, useEffect, useState } from 'react';
+import React, { useRef } from 'react';
+import useCheckVisibility from '../hooks/useCheckVisibility';
 import { Link } from 'react-router-dom';
 import MainNav from '../components/MainNav';
-import padlockSVG from '../padlock.svg';
-import clockSVG from '../clock.svg';
-import thumbSVG from '../thumb.svg';
+import padlockPNG from '../padlock.png';
+import clockPNG from '../clock.png';
+import thumbPNG from '../thumb.png';
 
 export default () => {
   const sentinalOne = useRef();
   const sentinalTwo = useRef();
 
-  const [sticky, setSticky] = useState(false);
-  const [notVisible, setNotVisible] = useState(true);
-
-  useEffect(() => {
-    const options = {
-      threshold: 0.0
-    }
-    const observer = new window.IntersectionObserver(entries => {
-      entries.forEach((entry => {
-        if(entry.target.className==='sentinal') {
-          if(entry.isIntersecting) {
-            setSticky(false);
-          } else {
-            setSticky(true);
-          }
-        }
-        if(entry.target.className==='sentinal-two') {
-          if(entry.isIntersecting) {
-            setNotVisible(false)
-          }
-        }
-      }))
-    }, options);
-    observer.observe(sentinalOne.current);
-    observer.observe(sentinalTwo.current);
-    return () => observer.unobserve(sentinalOne.current, sentinalTwo.current);
-  }, [])
-
   return (
     <div className="Home">
-      <MainNav className={sticky ? 'MainNav-sticky' : 'MainNav-not-sticky'}/>
+      <MainNav className={useCheckVisibility(sentinalOne, true) ? 'MainNav-not-sticky' : 'MainNav-sticky'}/>
       <div className="sentinal" ref={sentinalOne}></div>
       <div className="section-one">
         <div className="container-one">
@@ -49,30 +22,24 @@ export default () => {
           </p>
         </div>
         <div className="container-two">
-          <Link className="g_link" to="/apply">Apply Now</Link>
-          <a className="g_link" href="#learn-more">Learn More</a>
+          <Link className="global-link" to="/apply">Apply Now</Link>
+          <a className="global-link" href="#learn-more">Learn More</a>
         </div>
       </div>
 
       <div className="section-two">
         <h2 className="heading">Why Deed Poll Online?</h2>
-        <div>
-          <div className={`img-container one ${notVisible ? 'not-visible' : 'visible'}`}>
-            <img className="svg" alt="padlock image" src={padlockSVG} />
-          </div>
+        <div className={`container  ${useCheckVisibility(sentinalTwo, false) ? 'visible' : 'not-visible'}`}>
+          <img className="image" alt="padlock" src={padlockPNG} />
           <div className="sentinal-two" ref={sentinalTwo}></div>
           <h3 className="subheading">Secure.</h3>
         </div>
-        <div>
-          <div className={`img-container two ${notVisible ? 'not-visible' : 'visible'}`}>
-            <img className="svg" alt="clock image" src={clockSVG} />
-          </div>
+        <div className={`container  ${useCheckVisibility(sentinalTwo, false) ? 'visible' : 'not-visible'}`}>
+          <img className="image" alt="clock" src={clockPNG} />
           <h3 className="subheading">Fast.</h3>
         </div>
-        <div>
-          <div className={`img-container three ${notVisible ? 'not-visible' : 'visible'}`}>
-            <img className="svg" alt="thumbs up image" src={thumbSVG} />
-          </div>
+        <div className={`container  ${useCheckVisibility(sentinalTwo, false) ? 'visible' : 'not-visible'}`}>
+          <img className="image" alt="thumbs up" src={thumbPNG} />
           <h3 className="subheading">Simple.</h3>
         </div>
         <p className="text">
@@ -102,7 +69,7 @@ export default () => {
         </div>
         <div className="container">
           <div className="subheading">
-            <Link className="g_link" to="/info">More Info</Link>
+            <Link className="global-link" to="/info">More Info</Link>
           </div>
         </div>
       </div>

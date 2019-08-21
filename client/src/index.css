@@ -1,9 +1,9 @@
-.g_link:hover {
+.global-link:hover {
   background-color: #e87572;
   color: #fff;
 }
 
-.g_link {
+.global-link {
   display: inline-block;
   font-size: 1rem;
   font-weight: 600;
@@ -17,6 +17,13 @@
   text-align: center;
   box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
   transition: all 0.5s;
+}
+
+.global-heading {
+  padding: 3% 7%;
+  font-size: 3rem;
+  font-weight: 200;
+  border-bottom: 1px solid black;
 }
 
 @keyframes dropfade {
@@ -60,6 +67,7 @@
 }
 .Home .not-visible {
   opacity: 0;
+  transition: opacity 1s;
 }
 .Home .visible {
   opacity: 1;
@@ -108,13 +116,14 @@
   text-align: center;
   display: grid;
   align-items: center;
+  justify-items: center;
   grid-template-rows: auto auto auto;
   grid-template-columns: 1fr 1fr 1fr;
   background-color: rgba(0, 0, 0, 0.04);
 }
 .Home .section-two .heading {
+  width: 100%;
   grid-area: 1/1/2/4;
-  margin: 0;
   color: #008670;
   background-color: #fff;
 }
@@ -127,16 +136,13 @@
   color: #111;
   background-color: #fff;
 }
-.Home .section-two .svg {
-  width: 100%;
-}
-.Home .section-two .img-container {
-  display: inline-block;
-  background-color: #aff8db;
-  border-radius: 50%;
-  padding: 9%;
+.Home .section-two .image {
+  min-height: 40%;
   margin-top: 10%;
   width: 40%;
+  padding: 10%;
+  background-color: #aff8db;
+  border-radius: 30%;
   box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
 }
 .Home .section-two .subheading {
@@ -177,6 +183,12 @@
 .Apply {
   position: relative;
 }
+.Apply .ApplicationForm {
+  padding: 0 7%;
+}
+.Apply .Payment {
+  padding: 0 7%;
+}
 
 .Contact {
   position: relative;
@@ -209,32 +221,38 @@
 .MainNav .Logo {
   margin-right: auto;
 }
-.MainNav .MainNav-link {
+
+.MainNav-link {
   margin: 0 1%;
   text-align: center;
   font-weight: bold;
   color: black;
   text-decoration: none;
 }
-.MainNav .MainNav-link .MainNav-link-inner {
+.MainNav-link .MainNav-link-inner {
   display: inline-block;
 }
-.MainNav .MainNav-bounce .MainNav-link-inner {
+
+.MainNav-bounce .MainNav-link-inner {
   animation: bounce 0.3s ease 0s 1;
 }
-.MainNav .MainNav-dropfade {
+
+.MainNav-dropfade {
   animation: dropfade 0.4s ease 0.1s 1;
   animation-fill-mode: backwards;
 }
-.MainNav .MainNav-dropfade-delayed {
+
+.MainNav-dropfade-delayed {
   animation: dropfade 0.4s ease 0.2s 1;
   animation-fill-mode: backwards;
 }
-.MainNav .MainNav-dropfade-delayed-two {
+
+.MainNav-dropfade-delayed-two {
   animation: dropfade 0.4s ease 0.3s 1;
   animation-fill-mode: backwards;
 }
-.MainNav .MainNav-link-light {
+
+.MainNav-link-light {
   font-weight: normal;
 }
 
@@ -261,15 +279,6 @@
 }
 .MainNav-sticky .Logo {
   display: none;
-}
-.MainNav-sticky .MainNav-absolute {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  justify-content: flex-end;
-  background-color: white;
-  transition: all 0.8s;
 }
 
 .Logo-h1 {

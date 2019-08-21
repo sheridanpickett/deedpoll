@@ -1,11 +1,12 @@
 import React from 'react';
 import MainNav from '../components/MainNav';
+import ContactForm from '../components/ContactForm'
 
 export default () => {
   return (
     <div className="Contact">
       <MainNav />
-      <h1>Contact</h1>
+      <ContactForm />
     </div>
   )
 }

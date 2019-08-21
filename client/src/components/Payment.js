@@ -29,7 +29,6 @@ const Payment = ({stripe, formState}) => {
 
   return (
     <div className="Payment">
-      <h1>Payment</h1>
       <label>Credit Card Number</label>
       <CardNumberElement placeholder="Card Number" style={{base}} />
       <label>Expiry Date</label>
